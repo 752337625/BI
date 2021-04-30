@@ -1,0 +1,72 @@
+{
+  "id": "2520599",
+  "name": "BI",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12194039",
+      "name": "bar chart",
+      "font_class": "barchart",
+      "unicode": "ec04",
+      "unicode_decimal": 60420
+    },
+    {
+      "icon_id": "21169410",
+      "name": "puzzle-piece-plugin",
+      "font_class": "puzzle-piece-plugin",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1206405",
+      "name": "文字",
+      "font_class": "wenzi",
+      "unicode": "e62d",
+      "unicode_decimal": 58925
+    },
+    {
+      "icon_id": "1966203",
+      "name": "图片",
+      "font_class": "tupian",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "4922729",
+      "name": "文字工具",
+      "font_class": "text_tool",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "5244045",
+      "name": "插件",
+      "font_class": "chajian1",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "5651503",
+      "name": "图片",
+      "font_class": "tupian1",
+      "unicode": "e680",
+      "unicode_decimal": 59008
+    },
+    {
+      "icon_id": "7721915",
+      "name": "图片",
+      "font_class": "tupian2",
+      "unicode": "e6df",
+      "unicode_decimal": 59103
+    },
+    {
+      "icon_id": "9828815",
+      "name": "文字编辑",
+      "font_class": "ziyuan",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    }
+  ]
+}
