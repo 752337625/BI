@@ -82,6 +82,7 @@ ul {
 	transform: translate(0, -50%);
 	li {
 		float: left;
+        /* max-width: 100px; */
 	}
 }
 </style>
