@@ -1,8 +1,10 @@
 const baseFunction = {
 	state: () => ({}),
 	mutations: {
-		updateCurComponent(state, type) {
-			this.state.curComponent.is = type;
+		updateCurComponent(state, componentEntiy) {
+			Object.keys(componentEntiy).forEach(i => {
+				if (componentEntiy[i]) this.state.curComponent[i] = componentEntiy[i];
+			});
 		},
 	},
 	actions: {},

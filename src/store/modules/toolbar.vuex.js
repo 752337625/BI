@@ -1,3 +1,4 @@
+import ComponentEntiy from '@/entity/ComponentEntiy';
 import Style from '@/entity/Style';
 import { deepClone } from '@/utiles/utiles';
 const toolbar = {
@@ -10,9 +11,9 @@ const toolbar = {
 		/**
 		 * 新增ComponentData
 		 */
-		setPushComponentData(state) {
+		setPushComponentData() {
 			let length = this.state.componentData.length;
-			this.state.componentData.push({ id: length + 1, is: 'base-function', type: 'primary', style: new Style() });
+			this.state.componentData.push(new ComponentEntiy({ id: length + 1, is: 'base-function', style: new Style() }));
 			this.commit('setRevoke');
 		},
 		/**
@@ -28,9 +29,9 @@ const toolbar = {
 		 * 撤销撤销快照
 		 */
 		popRevoke(state) {
-			let componentData = state.revoke.pop()||[];
+			let componentData = state.revoke.pop() || [];
 			this.state.componentData = componentData;
-			if (componentData.length !== 0) this.commit('setRedo',componentData);
+			if (componentData.length !== 0) this.commit('setRedo', componentData);
 		},
 		/**
 		 * 压栈重做

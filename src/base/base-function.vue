@@ -18,7 +18,6 @@
                     <i class="iconfont icon-tupian"></i>
                 </div>
                 <p>插入图片</p>
-
             </li>
             <li>
                 <div class="vs-iconfont" @click="fun(4)">
@@ -31,6 +30,7 @@
 </template>
 <script>
 import { mapMutations } from 'vuex';
+import ComponentEntiy from '@/entity/ComponentEntiy';
 export default {
 	name: 'baseFunction',
 	methods: {
@@ -38,16 +38,16 @@ export default {
 		fun(num) {
 			switch (num) {
 				case 1:
-					this.updateCurComponent('text-component');
+					this.updateCurComponent(new ComponentEntiy({ is: 'text-component' }));
 					break;
 				case 2:
-					this.updateCurComponent('chart-copmonent');
+					this.updateCurComponent(new ComponentEntiy({ is: 'chart-copmonent' }));
 					break;
 				case 3:
-					this.updateCurComponent('img-component');
+					this.updateCurComponent(new ComponentEntiy({ is: 'img-component' }));
 					break;
 				case 4:
-					this.updateCurComponent('plugin-component');
+					this.updateCurComponent(new ComponentEntiy({ is: 'plugin-component' }));
 					break;
 			}
 		},

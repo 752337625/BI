@@ -15,8 +15,16 @@ const mutations = {
 		state.curComponent.style.left = style.left;
 		state.curComponent.style.height = style.height;
 		state.curComponent.style.width = style.width;
-        //state.componentData[state.curComponentIndex-1]=state.curComponent
-		//console.log(state.componentData);
 	},
+    /**
+     * baseFuntiocn点击处理
+     * @param {*} state 
+     * @param {*} componentEntiy 
+     */
+    updateCurComponent(state, componentEntiy) {
+        Object.keys(componentEntiy).forEach(i => {
+            if (componentEntiy[i]) state.curComponent[i] = componentEntiy[i];
+        });
+    },
 };
 export default mutations;
