@@ -10,6 +10,7 @@ import { mapMutations } from 'vuex';
 import eventPolyFill from '@/utiles/eventPolyfill';
 import regExp from '@/utiles/regExp';
 import setPointAndshapeSize from '@/utiles/setPointAndshapeSize';
+import { _debounce } from '@/utiles/utiles';
 export default {
 	name: 'base-shape',
 	props: {
@@ -47,16 +48,21 @@ export default {
 		};
 	},
 	methods: {
-		...mapMutations(['setCurComponent', 'setShapeStyle', 'setRevoke']),
+		...mapMutations(['setCurComponent', 'setShapeStyle', 'setRevoke', 'setDeepComponentData']),
 		/**
 		 * 设置当前点击组件，设置组件移动top left
 		 * 取消默认行为，以及冒泡
 		 */
 		handleMouseDownOnShape(e) {
-			this.setCurComponent({ component: this.element, index: this.index });
+			this.setCurComponent({
+				component: this.element,
+				index: this.index,
+			});
 			let startY = e.clientY;
 			let startX = e.clientX;
-			let style = { ...this.defaultStyle };
+			let style = {
+				...this.defaultStyle,
+			};
 			let curComponentTop = regExp.getNumberFn(style.top);
 			let curComponentLeft = regExp.getNumberFn(style.left);
 			// 如果元素没有移动，则不保存快照
@@ -88,31 +94,22 @@ export default {
 			let style = {
 				...this.defaultStyle,
 			};
-			//第一次点击时也会触发 move，所以会有“刚点击组件但未移动，组件的大小却改变了”的情况发生，因此第一次点击时不触发 move 事件
 			let isFirst = false;
-			// 是否需要保存快照
 			let needSave = false;
-			//获取当前点击的位置的定位属性
 			let startXY = eventPolyFill.getEventPosition(e);
-			//获取当前vs-shape的docPosition
 			let shapeXY = eventPolyFill.getDocPosition('.vs-shape');
-			//获取当前#vs-panel-body的docPosition
 			let docXY = eventPolyFill.getDocPosition('#vs-panel-body');
 			let move = me => {
 				let curXY = eventPolyFill.getEventPosition(me);
-				if (!isFirst && Math.abs(startXY.clientY - curXY.clientY) > 1) {
+				if (!isFirst && Math.abs(startXY.clientY - curXY.clientY) > 5) {
 					isFirst = true;
 					return;
 				}
-				//移动才进行快照
 				needSave = true;
-				//获取移动过程中定位属性
 				setPointAndshapeSize(point, style, startXY, curXY, shapeXY, docXY);
-				//修改当前组件样式
 				this.setShapeStyle(style);
 			};
 			let up = () => {
-				//缩放元素进行快照
 				if (needSave) this.setRevoke();
 				eventPolyFill.removeELPF(document, 'mousemove', move);
 				eventPolyFill.removeELPF(document, 'mouseup', up);
@@ -124,7 +121,6 @@ export default {
 		 * 四角定位，手势
 		 */
 		getPointStyle(point) {
-			//['lt', 't', 'rt', 'r', 'rb', 'b', 'lb', 'l']
 			let { width = '0px', height = '0px' } = this.defaultStyle;
 			let hasL = /l/.test(point);
 			let hasR = /r/.test(point);
@@ -151,8 +147,8 @@ export default {
 			}
 
 			let style = {
-				marginLeft: hasR ? '-4.5px' : '-4.5px',
-				marginTop: '-4.5px',
+				marginLeft: '-6px',
+				marginTop: '-6px',
 				left: `${newLeft}`,
 				top: `${newTop}`,
 				cursor: this.cursors[point],
@@ -165,16 +161,17 @@ export default {
 
 <style lang="less" scoped="scoped">
 .vs-shape {
+	box-sizing: content-box;
+	border: 1px solid #ccc;
 	position: absolute;
-	cursor: move;
-	border: 0.5px solid #ccc;
+	overflow: hidden;
 	.vs-shape-point {
 		position: absolute;
 		background: #fff;
-		background-color: #84b5eb;
-		width: 9px;
-		height: 9px;
-		z-index: 1;
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		border: 1px solid red;
 	}
 
 	&:hover {

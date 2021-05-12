@@ -47,7 +47,7 @@
                 <i class="el-icon-plus"></i>
                 <span>撤销</span>
             </li>
-            <li>
+            <li @click="popRedo">
                 <i class="el-icon-plus"></i>
                 <span>重做</span>
             </li>
@@ -106,7 +106,7 @@ export default {
 		}),
 	},
     methods:{
-        ...mapMutations(['popRevoke','setPushComponentData'])
+        ...mapMutations(['popRevoke','setPushComponentData','popRedo'])
     }
 };
 </script>

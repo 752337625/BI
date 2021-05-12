@@ -1,11 +1,11 @@
 <template>
     <div>
-        imgComponent
+        chartCopmonent
     </div>
 </template>
 <script>
 export default {
-	name: 'imgComponent',
+	name: 'chartCopmonent',
 };
 </script> 
 <style scoped lang='less'>

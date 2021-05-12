@@ -4,9 +4,9 @@
             <vs-toolbar></vs-toolbar>
         </header>
         <section class="vs-flex">
-            <!-- <vs-panel-lf></vs-panel-lf> -->
+            <vs-panel-lf></vs-panel-lf>
             <vs-panel-main></vs-panel-main>
-            <!--<vs-panel-rf></vs-panel-rf> -->
+            <vs-panel-rf></vs-panel-rf>
         </section>
     </div>
 </template>

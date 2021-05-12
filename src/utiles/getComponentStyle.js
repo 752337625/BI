@@ -12,11 +12,11 @@
  * @time 2021/4/11
  *
  */
-function getComponentStyle(style = {}, filter = ['top', 'left', 'rotate']) {
+function getComponentStyle(style = {}, filter = ['top', 'left', 'rotate','width','height']) {
 	return getStyle(style, filter);
 }
 
-function getStyle(style = {}, filter = ['top', 'left', 'rotate']) {
+function getStyle(style = {}, filter = ['top', 'left', 'rotate','width','height']) {
 	const result = {};
 	Object.keys(style).forEach(key => {
 		if (!filter.includes(key)) {

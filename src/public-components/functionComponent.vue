@@ -1,19 +1,12 @@
 <template>
     <div>
-        <ul>
-            <li>
-
-            </li>
-            <li>
-
-            </li>
-            <li>
-                
-            </li>
-        </ul>
+        functionComponent
     </div>
 </template>
-
-<script></script>
-
-<style></style>
+<script>
+export default {
+	name: 'functionComponent',
+};
+</script> 
+<style scoped lang='less'>
+</style>
