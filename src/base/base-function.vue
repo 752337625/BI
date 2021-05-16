@@ -35,13 +35,16 @@ export default {
 	name: 'baseFunction',
 	methods: {
 		...mapMutations('base-function', ['updateCurComponent']),
+		...mapMutations('toolbar', ['setRevoke']),
 		fun(num) {
+			this.setRevoke();
 			switch (num) {
 				case 1:
 					this.updateCurComponent(new ComponentEntiy({ is: 'text-component' }));
 					break;
 				case 2:
 					this.updateCurComponent(new ComponentEntiy({ is: 'chart-copmonent' }));
+
 					break;
 				case 3:
 					this.updateCurComponent(new ComponentEntiy({ is: 'img-component' }));

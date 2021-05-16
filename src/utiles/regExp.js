@@ -7,6 +7,10 @@ const regExp = {
 	isNumberFn(word) {
 		return this.isNumber.test(word);
 	},
+	isImg: /^([^]*)\.(png|jpeg|jpg|gif|svg|webp)$/i,
+	isImgFn(word) {
+		return this.isImg.test(word);
+	},
 };
 
 export default regExp;

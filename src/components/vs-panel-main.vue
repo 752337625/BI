@@ -2,7 +2,7 @@
     <div class="vs-panel-main">
         <div class="vs-panel-body " id="vs-panel-body" @mousedown="handleMouseDown">
             <base-shape v-for="i in componentData" :style="setShapeStyle(i.style)" :defaultStyle="i.style" :element="i" :active="i.id === curComponentIndex" :index="i.id" :key="i.id">
-                <component :is="i.is" :type="i.type" :style="setComponentStyle(i.style)" :index="i.id" class="vs-baseFunction">查询</component>
+                <component :is="i.is" :type="i.type" :style="setComponentStyle(i.style)" :index="i.id" class="vs-baseFunction" :item='i'></component>
             </base-shape>
         </div>
     </div>
@@ -20,7 +20,6 @@ export default {
 	computed: {
 		...mapState({
 			curComponentIndex: state => state.curComponentIndex,
-			//curComponent: state => state.curComponent,
 			componentData: state => state.componentData,
 		}),
 	},

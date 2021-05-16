@@ -1,13 +1,11 @@
 const imgComponent = {
-	state: () => ({
-        src:''
-    }),
+	namespaced: true,
+	state: () => ({}),
 	mutations: {
-        setImg(state,){
-
-
-        }
-    },
+		setImg(state, imgURL) {
+			this.state.curComponent.src = imgURL;
+		},
+	},
 	actions: {},
 	getters: {},
 	modules: {},

@@ -1,30 +1,35 @@
 <template>
     <div class="vs-menu" style="height:auto">
-        <div>
-            <p title="隐藏" @click="hideMenu"> <i class="iconfont icon-jiahao1"></i></p>
-            <p title="删除"><i class="iconfont icon-shanchu"></i></p>
-            <p title="复制"><i class="iconfont icon-fuzhi"></i></p>
-            <p title="清除"><i class="iconfont icon-qingchu"></i></p>
-            <p title="上移一层"><i class="iconfont icon-shangyi"></i></p>
-            <p title="上移一层"><i class="iconfont icon-xiayi"></i></p>
-            <slot name="imgComponent"></slot>
-            <slot name="pluginComponent"></slot>
-            <slot name="textComponent"></slot>
+        <div style="height: auto;">
+            <i title="隐藏" :class="['iconfont',isMenu?'icon-jianhao2':'icon-jiahao1'] " @click.prevent.stop="hideMenu($event)"></i>
+            <i title="删除" class="iconfont icon-shanchu"></i>
+            <i title="复制" class="iconfont icon-fuzhi"></i>
+            <i title="清除" class="iconfont icon-qingchu"></i>
+            <i title="上移一层" class="iconfont icon-shangyi"></i>
+            <i title="上移一层" class="iconfont icon-xiayi"></i>
+            <slot name="img-html"></slot>
+            <slot name="plugin-html"></slot>
+            <slot name="text-html"></slot>
         </div>
     </div>
 </template>
 <script>
 export default {
 	name: 'baseMenu',
+	data() {
+		return {
+			isMenu: true,
+		};
+	},
 	methods: {
-		hideMenu() {
-			let menu = document.getElementsByClassName('vs-menu')[0];
-			let style = menu.style;
+		hideMenu(event) {
+			let style = event.target.parentElement.style;
 			if (style.getPropertyValue('height') === 'auto') {
 				style.setProperty('height', '30px');
 			} else {
 				style.setProperty('height', 'auto');
 			}
+			this.isMenu = !this.isMenu;
 		},
 	},
 };
@@ -40,7 +45,8 @@ export default {
 	transition-property: all;
 	transition-duration: 5ms;
 	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-	p {
+	.iconfont {
+		display: inline-block;
 		width: 25px;
 		height: 25px;
 		line-height: 25px;
@@ -49,9 +55,7 @@ export default {
 		margin-bottom: 5px;
 		background-color: rgba(71, 89, 119, 0.8);
 		cursor: pointer;
-		.iconfont {
-			font-size: 14px;
-		}
+		font-size: 14px;
 		&:first-child {
 			border-radius: 50%;
 		}

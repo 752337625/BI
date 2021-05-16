@@ -1,6 +1,6 @@
 <template>
     <!-- //阻止默认行为防止在移动的过程中选中文字，同时阻止事件冒泡 -->
-    <div class="vs-shape" :class="{ active }" @mousedown.stop.prevent="handleMouseDownOnShape" draggable="true">
+    <div class="vs-shape" :class="{ active }" @mousedown.stop.prevent="handleMouseDownOnShape">
         <div v-for="item in active ? pointList : []" :key="item" :class="['vs-shape-point', item]" @mousedown.stop.prevent="handleMouseDownOnPoint(item, $event)" :style="getPointStyle(item)">
         </div>
         <slot></slot>
@@ -164,16 +164,17 @@ export default {
 <style lang="less" scoped="scoped">
 .vs-shape {
 	box-sizing: content-box;
-	border: 1px solid #ccc;
+	//border: 1px solid #ccc;
 	position: absolute;
 	// overflow: hidden;
 	.vs-shape-point {
-		position: absolute;
-		background: #fff;
 		width: 12px;
 		height: 12px;
 		border-radius: 50%;
 		border: 1px solid red;
+		background: #fff;
+		position: absolute;
+		z-index: 100;
 	}
 
 	&:hover {
