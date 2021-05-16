@@ -6,32 +6,39 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1413436",
+      "name": "删除",
+      "font_class": "shanchu",
+      "unicode": "e69b",
+      "unicode_decimal": 59035
+    },
+    {
+      "icon_id": "7407672",
+      "name": "上移",
+      "font_class": "shangyi",
+      "unicode": "e69c",
+      "unicode_decimal": 59036
+    },
+    {
+      "icon_id": "7408697",
+      "name": "下移",
+      "font_class": "xiayi",
+      "unicode": "e69e",
+      "unicode_decimal": 59038
+    },
+    {
+      "icon_id": "18261276",
+      "name": "清除",
+      "font_class": "qingchu",
+      "unicode": "e621",
+      "unicode_decimal": 58913
+    },
+    {
       "icon_id": "8530851",
       "name": "下载",
       "font_class": "xingzhuang",
       "unicode": "e61c",
       "unicode_decimal": 58908
-    },
-    {
-      "icon_id": "10905637",
-      "name": "下载",
-      "font_class": "xiazai",
-      "unicode": "e632",
-      "unicode_decimal": 58930
-    },
-    {
-      "icon_id": "11491738",
-      "name": "下载",
-      "font_class": "zu",
-      "unicode": "e60e",
-      "unicode_decimal": 58894
-    },
-    {
-      "icon_id": "14397798",
-      "name": "下载",
-      "font_class": "download",
-      "unicode": "e77f",
-      "unicode_decimal": 59263
     },
     {
       "icon_id": "18635066",
@@ -46,13 +53,6 @@
       "font_class": "barchart",
       "unicode": "ec04",
       "unicode_decimal": 60420
-    },
-    {
-      "icon_id": "12669151",
-      "name": "copy",
-      "font_class": "copy1",
-      "unicode": "e624",
-      "unicode_decimal": 58916
     },
     {
       "icon_id": "13314435",
