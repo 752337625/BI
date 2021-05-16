@@ -1,8 +1,8 @@
 <template>
-    <div class="vs-menu">
+    <div class="vs-menu" style="height:auto">
         <div>
-            <p><i class="iconfont icon-jiahao"></i></p>
-            <p><i class="iconfont icon-copy"></i></p>
+            <p title="隐藏" @click="hideMenu"> <i class="iconfont icon-jiahao1"></i></p>
+            <p title="复制"><i class="iconfont icon-fuzhi"></i></p>
             <slot name="imgComponent"></slot>
             <slot name="pluginComponent"></slot>
             <slot name="textComponent"></slot>
@@ -12,12 +12,45 @@
 <script>
 export default {
 	name: 'baseMenu',
+	methods: {
+		hideMenu() {
+			let menu = document.getElementsByClassName('vs-menu')[0];
+			let style = menu.style;
+			if (style.getPropertyValue('height') === 'auto') {
+				style.setProperty('height', '30px');
+			} else {
+				style.setProperty('height', 'auto');
+			}
+		},
+	},
 };
 </script>
 <style lang="less" scoped>
 .vs-menu {
+	width: 25px;
+	text-align: center;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: -35px;
+	overflow: hidden;
+	transition-property: height;
+	transition-duration: 5ms;
+	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	p {
+		width: 25px;
+		height: 25px;
+		line-height: 25px;
+		border-radius: 2px;
+		margin: 0 auto;
+		margin-bottom: 5px;
+		background-color: rgba(71, 89, 119, 0.8);
+		cursor: pointer;
+		.iconfont {
+			font-size: 14px;
+		}
+		&:first-child {
+			border-radius: 50%;
+		}
+	}
 }
 </style>

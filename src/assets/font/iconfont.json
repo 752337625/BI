@@ -6,32 +6,39 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "5286705",
+      "icon_id": "8530851",
+      "name": "下载",
+      "font_class": "xingzhuang",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "10905637",
       "name": "下载",
       "font_class": "xiazai",
-      "unicode": "e63b",
-      "unicode_decimal": 58939
+      "unicode": "e632",
+      "unicode_decimal": 58930
     },
     {
-      "icon_id": "7556165",
-      "name": "加号",
-      "font_class": "jiahao",
-      "unicode": "e603",
-      "unicode_decimal": 58883
-    },
-    {
-      "icon_id": "7735992",
-      "name": "copy",
-      "font_class": "copy",
-      "unicode": "e8df",
-      "unicode_decimal": 59615
-    },
-    {
-      "icon_id": "12771540",
+      "icon_id": "11491738",
       "name": "下载",
-      "font_class": "xiazai1",
-      "unicode": "e625",
-      "unicode_decimal": 58917
+      "font_class": "zu",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "14397798",
+      "name": "下载",
+      "font_class": "download",
+      "unicode": "e77f",
+      "unicode_decimal": 59263
+    },
+    {
+      "icon_id": "18635066",
+      "name": "复制",
+      "font_class": "fuzhi",
+      "unicode": "e610",
+      "unicode_decimal": 58896
     },
     {
       "icon_id": "12194039",
@@ -39,6 +46,27 @@
       "font_class": "barchart",
       "unicode": "ec04",
       "unicode_decimal": 60420
+    },
+    {
+      "icon_id": "12669151",
+      "name": "copy",
+      "font_class": "copy1",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "13314435",
+      "name": "加号",
+      "font_class": "jiahao1",
+      "unicode": "e6cd",
+      "unicode_decimal": 59085
+    },
+    {
+      "icon_id": "16055316",
+      "name": "减号2",
+      "font_class": "jianhao2",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
     },
     {
       "icon_id": "21169410",
@@ -60,41 +88,6 @@
       "font_class": "tupian",
       "unicode": "e602",
       "unicode_decimal": 58882
-    },
-    {
-      "icon_id": "4922729",
-      "name": "文字工具",
-      "font_class": "text_tool",
-      "unicode": "e67f",
-      "unicode_decimal": 59007
-    },
-    {
-      "icon_id": "5244045",
-      "name": "插件",
-      "font_class": "chajian1",
-      "unicode": "e69d",
-      "unicode_decimal": 59037
-    },
-    {
-      "icon_id": "5651503",
-      "name": "图片",
-      "font_class": "tupian1",
-      "unicode": "e680",
-      "unicode_decimal": 59008
-    },
-    {
-      "icon_id": "7721915",
-      "name": "图片",
-      "font_class": "tupian2",
-      "unicode": "e6df",
-      "unicode_decimal": 59103
-    },
-    {
-      "icon_id": "9828815",
-      "name": "文字编辑",
-      "font_class": "ziyuan",
-      "unicode": "e620",
-      "unicode_decimal": 58912
     }
   ]
 }

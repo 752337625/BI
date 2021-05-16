@@ -1,7 +1,8 @@
 <template>
     <!-- //阻止默认行为防止在移动的过程中选中文字，同时阻止事件冒泡 -->
     <div class="vs-shape" :class="{ active }" @mousedown.stop.prevent="handleMouseDownOnShape" draggable="true">
-        <div v-for="item in active ? pointList : []" :key="item" :class="['vs-shape-point', item]" @mousedown.stop.prevent="handleMouseDownOnPoint(item, $event)" :style="getPointStyle(item)"></div>
+        <div v-for="item in active ? pointList : []" :key="item" :class="['vs-shape-point', item]" @mousedown.stop.prevent="handleMouseDownOnPoint(item, $event)" :style="getPointStyle(item)">
+        </div>
         <slot></slot>
     </div>
 </template>
@@ -165,7 +166,7 @@ export default {
 	box-sizing: content-box;
 	border: 1px solid #ccc;
 	position: absolute;
-	overflow: hidden;
+	// overflow: hidden;
 	.vs-shape-point {
 		position: absolute;
 		background: #fff;

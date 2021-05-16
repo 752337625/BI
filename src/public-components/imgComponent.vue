@@ -3,7 +3,7 @@
         <img :src="curComponent.src" @error="imgError">
         <base-menu>
             <template v-slot:imgComponent>
-                <p><i class="iconfont icon-xiazai1" title="下载"></i></p>
+                <p title="下载"><i class="iconfont icon-xingzhuang"></i></p>
             </template>
         </base-menu>
     </div>
