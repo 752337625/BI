@@ -34,7 +34,7 @@ import ComponentEntiy from '@/entity/ComponentEntiy';
 export default {
 	name: 'baseFunction',
 	methods: {
-		...mapMutations(['updateCurComponent']),
+		...mapMutations('base-function', ['updateCurComponent']),
 		fun(num) {
 			switch (num) {
 				case 1:

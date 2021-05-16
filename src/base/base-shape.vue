@@ -49,6 +49,7 @@ export default {
 	},
 	methods: {
 		...mapMutations(['setCurComponent', 'setShapeStyle', 'setRevoke', 'setDeepComponentData']),
+		...mapMutations('toolbar', ['setRevoke']),
 		/**
 		 * 设置当前点击组件，设置组件移动top left
 		 * 取消默认行为，以及冒泡

@@ -1,4 +1,5 @@
 const baseFunction = {
+	namespaced: true,
 	state: () => ({}),
 	mutations: {
 		updateCurComponent(state, componentEntiy) {

@@ -92,7 +92,7 @@
 </template>
 
 <script>
-import { mapState,mapMutations } from 'vuex';
+import { mapMutations } from 'vuex';
 export default {
 	name: 'vs-toolbar',
 	data() {
@@ -100,14 +100,9 @@ export default {
 			unfold: false,
 		};
 	},
-	computed: {
-		...mapState({
-			eventPosition: state => state.eventPosition,
-		}),
+	methods: {
+		...mapMutations('toolbar', ['popRevoke', 'setPushComponentData', 'popRedo']),
 	},
-    methods:{
-        ...mapMutations(['popRevoke','setPushComponentData','popRedo'])
-    }
 };
 </script>
 

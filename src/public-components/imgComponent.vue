@@ -1,29 +1,32 @@
 <template>
     <div>
-        <img :src="imgSrc" @error="imgError">
-        <input type="file" id="file" hidden @change="changeFile" />
+        <img :src="curComponent.src" @error="imgError">
+        <base-menu>
+            <template v-slot:imgComponent>
+                <p><i class="iconfont icon-xiazai1" title="下载"></i></p>
+            </template>
+        </base-menu>
     </div>
 </template>
 <script>
+import { mapState, mapMutations } from 'vuex';
 export default {
+	components: {
+		'base-menu': () => import('../base/base-menu'),
+	},
 	name: 'imgComponent',
 	data() {
-		return {
-			imgSrc: '',
-			file: null,
-		};
+		return {};
+	},
+
+	computed: {
+		...mapState({
+			curComponent: state => state.curComponent,
+		}),
 	},
 	mounted() {},
 	methods: {
-		open() {
-			let file = document.getElementById('file');
-			file.value = '';
-			file.click();
-		},
-		changeFile(event) {
-			let fileList = event.target.files;
-			console.log(fileList);
-		},
+		...mapMutations('base-function', ['updateCurComponent']),
 		imgError(event) {
 			let imgDom = event.target;
 			imgDom.classList.add('img--error');

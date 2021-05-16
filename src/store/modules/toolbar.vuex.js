@@ -2,6 +2,7 @@ import ComponentEntiy from '@/entity/ComponentEntiy';
 import Style from '@/entity/Style';
 import { deepClone } from '@/utiles/utiles';
 const toolbar = {
+	namespaced: true,
 	state: () => ({
 		revoke: [], //撤销
 		redo: [], //重做
@@ -11,10 +12,10 @@ const toolbar = {
 		/**
 		 * 新增ComponentData
 		 */
-		setPushComponentData() {
+		setPushComponentData(state) {
 			let length = this.state.componentData.length;
 			this.state.componentData.push(new ComponentEntiy({ id: length + 1, is: 'base-function', style: new Style() }));
-			this.commit('setRevoke');
+			this.commit('toolbar/setRevoke');
 		},
 		/**
 		 * 压栈进行快照,注意每次压栈都是最新的，如何不压最新的情况下设计？
@@ -31,7 +32,7 @@ const toolbar = {
 		popRevoke(state) {
 			let componentData = state.revoke.pop() || [];
 			this.state.componentData = componentData;
-			if (componentData.length !== 0) this.commit('setRedo', componentData);
+			if (componentData.length !== 0) this.commit('toolbar/setRedo', componentData);
 		},
 		/**
 		 * 压栈重做
@@ -47,7 +48,7 @@ const toolbar = {
 			if (length === 0) return;
 			let componentData = state.redo.pop() || [];
 			this.state.componentData = componentData;
-			this.commit({ type: 'setRevoke' });
+			this.commit({ type: 'toolbar/setRevoke' });
 		},
 	},
 	actions: {},
