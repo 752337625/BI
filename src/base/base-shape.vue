@@ -1,6 +1,6 @@
 <template>
     <!-- //阻止默认行为防止在移动的过程中选中文字，同时阻止事件冒泡 -->
-    <div class="vs-shape" :class="{ active }" @mousedown.stop.prevent="handleMouseDownOnShape">
+    <div class="vs-shape" :class="{ active }" @mousedown.stop.prevent="handleMouseDownOnShape" :id="'vs-shape-'+index">
         <div v-for="item in active ? pointList : []" :key="item" :class="['vs-shape-point', item]" @mousedown.stop.prevent="handleMouseDownOnPoint(item, $event)" :style="getPointStyle(item)">
         </div>
         <slot></slot>

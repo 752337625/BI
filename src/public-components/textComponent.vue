@@ -1,7 +1,5 @@
 <template>
-    <div>
-     
-
+    <div contentEditable>
         textComponent
     </div>
 </template>

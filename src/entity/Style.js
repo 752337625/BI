@@ -1,6 +1,6 @@
 const defaultNum = {
-	width: '400px',
-	height: '200px',
+	width: '500px',
+	height: '500px',
 	left: '0',
 	top: '0',
 	//rotate: 0,
