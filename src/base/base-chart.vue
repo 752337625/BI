@@ -1,7 +1,5 @@
 <template>
-    <div class="vs-base-chart" >
-
-    </div>
+    <div class="vs-base-chart" :id="'chart-'+id"></div>
 </template>
 <script>
 export default {
@@ -20,18 +18,33 @@ export default {
 			require: true,
 		},
 	},
+	data() {
+		return {
+			baseChart: null,
+		};
+	},
 	mounted() {
-        // console.log(this.chartOption,this.id)
-		// this.initData();
+		this.initData();
+		this.observe();
 	},
 	methods: {
 		initData() {
-			let dom = document.getElementById(this.id);
-			let baseChart = echarts.init(dom);
-			baseChart.setOption(this.chartOption);
+			let dom = document.getElementById('chart-1');
+			this.baseChart = echarts.init(dom);
+			this.baseChart.setOption(this.chartOption);
 			window.onresize = () => {
-				baseChart.resize();
+				this.baseChart.resize();
 			};
+		},
+		/**
+		 * 监听dom属性更改来修改
+		 */
+		observe() {
+			let observer = new MutationObserver((mutations, observer) => {
+				this.baseChart.resize();
+			});
+			let baseFun = document.getElementById('vs-shape-1');
+			observer.observe(baseFun, { attributeFilter: ['style'] });
 		},
 	},
 };
