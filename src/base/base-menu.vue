@@ -5,8 +5,8 @@
             <i title="删除" class="iconfont icon-shanchu"></i>
             <i title="复制" class="iconfont icon-fuzhi"></i>
             <i title="清除" class="iconfont icon-qingchu"></i>
-            <i title="上移一层" class="iconfont icon-shangyi"></i>
-            <i title="上移一层" class="iconfont icon-xiayi"></i>
+            <i title="上移一层" class="iconfont icon-shangyi" @click.prevent.stop="setZIndexCurComponent('+')"></i>
+            <i title="上移一层" class="iconfont icon-xiayi" @click.prevent.stop="setZIndexCurComponent('-')"></i>
             <slot name="img-html"></slot>
             <slot name="plugin-html"></slot>
             <slot name="text-html"></slot>
@@ -14,6 +14,7 @@
     </div>
 </template>
 <script>
+import { mapMutations } from 'vuex';
 export default {
 	name: 'baseMenu',
 	data() {
@@ -22,6 +23,7 @@ export default {
 		};
 	},
 	methods: {
+		...mapMutations('base-menu', ['setZIndexCurComponent']),
 		hideMenu(event) {
 			let style = event.target.parentElement.style;
 			if (style.getPropertyValue('height') === 'auto') {
@@ -42,9 +44,7 @@ export default {
 	top: 0;
 	right: -35px;
 	overflow: hidden;
-	transition-property: all;
-	transition-duration: 5ms;
-	transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+	z-index: 10000;
 	.iconfont {
 		display: inline-block;
 		width: 25px;

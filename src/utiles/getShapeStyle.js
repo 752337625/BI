@@ -11,7 +11,7 @@
  */
 function getShapeStyle(style) {
 	const result = {};
-	['top', 'left', 'rotate', 'width', 'height'].forEach(attr => {
+	['top', 'left', 'rotate', 'width', 'height', 'zIndex'].forEach(attr => {
 		if (attr !== 'rotate') {
 			result[attr] = style[attr];
 		} else {

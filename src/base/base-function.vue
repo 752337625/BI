@@ -26,13 +26,25 @@
                 <p>插入插件</p>
             </li>
         </ul>
+        <base-menu v-show="curComponentIndex===index"></base-menu>
     </div>
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 import ComponentEntiy from '@/entity/ComponentEntiy';
 export default {
 	name: 'baseFunction',
+	props: {
+		index: {
+			type: [Number, String],
+		},
+	},
+	computed: {
+		...mapState({ curComponentIndex: state => state.curComponentIndex }),
+	},
+	components: {
+		'base-menu': () => import('../base/base-menu'),
+	},
 	methods: {
 		...mapMutations('base-function', ['updateCurComponent']),
 		...mapMutations('toolbar', ['setRevoke']),

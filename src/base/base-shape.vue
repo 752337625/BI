@@ -166,6 +166,7 @@ export default {
 	box-sizing: content-box;
 	//border: 1px solid #ccc;
 	position: absolute;
+    background-color: #fff;
 	// overflow: hidden;
 	.vs-shape-point {
 		width: 12px;

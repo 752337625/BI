@@ -3,6 +3,7 @@ const defaultNum = {
 	height: '500px',
 	left: '0',
 	top: '0',
+	zIndex: 1,
 	//rotate: 0,
 	//fontSize: '14px',
 	//borderWidth: '0',
