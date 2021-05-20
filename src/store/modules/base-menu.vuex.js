@@ -10,9 +10,11 @@ const baseMenu = {
 			} else {
 				this.state.curComponent.style.zIndex++;
 			}
+			this.commit('toolbar/setRevoke');
 		},
-		setBGCCurComponent(state, color) {
+		setBGCCurComponent(state, color = '#FFF') {
 			this.state.curComponent.style.backgroundColor = color;
+			this.commit('toolbar/setRevoke');
 		},
 	},
 	actions: {},

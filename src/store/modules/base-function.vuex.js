@@ -7,7 +7,7 @@ const baseFunction = {
 			Object.keys(componentEntiy).forEach(i => {
 				if (componentEntiy[i]) this.state.curComponent[i] = componentEntiy[i];
 			});
-			console.log(this.state.curComponent);
+			this.commit('toolbar/setRevoke');
 		},
 	},
 	actions: {},

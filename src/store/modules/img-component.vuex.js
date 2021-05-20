@@ -4,6 +4,7 @@ const imgComponent = {
 	mutations: {
 		setImg(state, imgURL) {
 			this.state.curComponent.src = imgURL;
+            this.commit('toolbar/setRevoke');
 		},
 	},
 	actions: {},

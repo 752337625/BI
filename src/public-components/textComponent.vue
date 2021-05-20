@@ -5,19 +5,14 @@
     </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import baseMenu from '@/mixin/base-menu';
 export default {
 	name: 'textComponent',
+    mixins: [baseMenu],
 	props: {
 		index: {
 			type: [Number, String],
 		},
-	},
-	computed: {
-		...mapState({ curComponentIndex: state => state.curComponentIndex }),
-	},
-	components: {
-		'base-menu': () => import('../base/base-menu'),
 	},
 };
 </script>

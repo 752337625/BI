@@ -12,11 +12,12 @@
     </div>
 </template>
 <script>
-import { mapMutations, mapState } from 'vuex';
+import { mapMutations } from 'vuex';
+import baseMenu from '@/mixin/base-menu';
 import regExp from '@/utiles/regExp';
-import Style from '@/entity/Style';
 export default {
 	name: 'imgComponent',
+	mixins: [baseMenu],
 	props: {
 		index: {
 			type: [Number, String],
@@ -29,16 +30,10 @@ export default {
 			},
 		},
 	},
-	computed: {
-		...mapState({ curComponentIndex: state => state.curComponentIndex }),
-	},
 	data() {
 		return {
 			name: '',
 		};
-	},
-	components: {
-		'base-menu': () => import('../base/base-menu'),
 	},
 	mounted() {
 		this.openFile();

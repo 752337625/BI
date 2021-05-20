@@ -1,22 +1,19 @@
 <template>
     <div>
         <base-chart :chartOption="chartOption" id="1"></base-chart>
-        <base-menu v-show="curComponentIndex===index">
-        </base-menu>
+        <base-menu v-show="curComponentIndex===index"></base-menu>
     </div>
 </template>
 <script>
 import { option } from '@/utiles/chartOption.js';
-import { mapState } from 'vuex';
+import baseMenu from '@/mixin/base-menu';
 export default {
 	name: 'chartCopmonent',
+	mixins: [baseMenu],
 	props: {
 		index: {
 			type: [Number, String],
 		},
-	},
-	computed: {
-		...mapState({ curComponentIndex: state => state.curComponentIndex }),
 	},
 	data() {
 		return {
@@ -26,7 +23,6 @@ export default {
 	},
 	components: {
 		'base-chart': () => import('@/base/base-chart'),
-		'base-menu': () => import('../base/base-menu'),
 	},
 };
 </script>
