@@ -11,6 +11,9 @@ const baseMenu = {
 				this.state.curComponent.style.zIndex++;
 			}
 		},
+		setBGCCurComponent(state, color) {
+			this.state.curComponent.style.backgroundColor = color;
+		},
 	},
 	actions: {},
 	getters: {},

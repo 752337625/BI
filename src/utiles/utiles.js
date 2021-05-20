@@ -27,7 +27,7 @@ export function deepClone(target) {
  * this:值当前防抖函数下的this，不是func。例如 application.vue onSubmit下的this，
  * args：是绑定函数的参数。例如 application.vue onSubmit(5)下的argument 中有5
  */
- export function _debounce(func, wait = 500, immediate = true) {
+export function _debounce(func, wait = 500, immediate = true) {
 	var timeout;
 	return function () {
 		let context = this;
@@ -53,9 +53,9 @@ export function deepClone(target) {
  * @param type 1 表时间戳版，2 表定时器版
  * this:值当前防抖函数下的this，不是func。例如 application.vue onSubmit下的this，
  * args：是绑定函数的参数。例如 application.vue onSubmit(5)下的argument 中有5
- * 
+ *
  */
- export function _throttle(func, wait = 500, type = 1) {
+export function _throttle(func, wait = 500, type = 1) {
 	if (type === 1) {
 		var previous = 0;
 	} else if (type === 2) {
@@ -79,4 +79,13 @@ export function deepClone(target) {
 			}
 		}
 	};
+}
+
+/**
+ * @desc null undefined
+ * @param func 函数
+ *
+ */
+export function isUndef(v) {
+	return v === undefined || v === null;
 }

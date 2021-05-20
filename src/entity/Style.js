@@ -6,14 +6,15 @@ const defaultNum = {
 	zIndex: 1,
 	//rotate: 0,
 	//fontSize: '14px',
-	//borderWidth: '0',
+	borderWidth: '1px',
 	//letterSpacing: '0',
 	//borderRadius: '0',
 	//magin: '0',
 };
 const defaultStr = {
-	//borderStyle: 'solid',
-	//borderColor: '#ccc',
+	borderStyle: 'solid',
+	borderColor: '#ccc',
+	backgroundColor: '#fff',
 };
 export default class Style {
 	constructor(num = defaultNum, str = defaultStr) {

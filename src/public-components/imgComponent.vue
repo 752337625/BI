@@ -4,6 +4,7 @@
         <img @error="imgError" :src="item.src">
         <base-menu v-show="curComponentIndex===index">
             <template v-slot:img-html>
+                <i title="清除" class="iconfont icon-qingchu" @click="updateCurComponent({ is: 'base-function',src:''})"></i>
                 <i title="下载" class="iconfont icon-xingzhuang" @click="downloadFile"></i>
                 <i title="上传" class="iconfont icon-shangchuantupian" @click="openFile"></i>
             </template>
@@ -13,6 +14,7 @@
 <script>
 import { mapMutations, mapState } from 'vuex';
 import regExp from '@/utiles/regExp';
+import Style from '@/entity/Style';
 export default {
 	name: 'imgComponent',
 	props: {
@@ -42,6 +44,7 @@ export default {
 		this.openFile();
 	},
 	methods: {
+		...mapMutations('base-function', ['updateCurComponent']),
 		...mapMutations('img-component', ['setImg']),
 		...mapMutations('toolbar', ['setRevoke']),
 		openFile() {

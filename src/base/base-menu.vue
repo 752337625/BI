@@ -4,7 +4,7 @@
             <i title="隐藏" :class="['iconfont',isMenu?'icon-jianhao2':'icon-jiahao1'] " @click.prevent.stop="hideMenu($event)"></i>
             <i title="删除" class="iconfont icon-shanchu"></i>
             <i title="复制" class="iconfont icon-fuzhi"></i>
-            <i title="清除" class="iconfont icon-qingchu"></i>
+            <i title="修改背景颜色" class="iconfont  icon-beijingyanse" @click.prevent.stop="setBGCCurComponent('+')"></i>
             <i title="上移一层" class="iconfont icon-shangyi" @click.prevent.stop="setZIndexCurComponent('+')"></i>
             <i title="上移一层" class="iconfont icon-xiayi" @click.prevent.stop="setZIndexCurComponent('-')"></i>
             <slot name="img-html"></slot>
@@ -23,7 +23,7 @@ export default {
 		};
 	},
 	methods: {
-		...mapMutations('base-menu', ['setZIndexCurComponent']),
+		...mapMutations('base-menu', ['setZIndexCurComponent','setBGCCurComponent']),
 		hideMenu(event) {
 			let style = event.target.parentElement.style;
 			if (style.getPropertyValue('height') === 'auto') {
