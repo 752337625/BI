@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "10793700",
+      "name": "字体颜色_文字操作_jurassic",
+      "font_class": "jurassic_font-color",
+      "unicode": "e704",
+      "unicode_decimal": 59140
+    },
+    {
       "icon_id": "1621497",
       "name": "背景颜色",
       "font_class": "beijingyanse",

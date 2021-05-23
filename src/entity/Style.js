@@ -4,6 +4,7 @@ const defaultNum = {
 	left: '0',
 	top: '0',
 	zIndex: 1,
+    color:'#2c3e50',
 	//rotate: 0,
 	//fontSize: '14px',
 	borderWidth: '1px',

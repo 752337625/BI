@@ -16,6 +16,10 @@ const baseMenu = {
 			this.state.curComponent.style.backgroundColor = color;
 			this.commit('toolbar/setRevoke');
 		},
+		setFFCCurComponent(state, color = '#2c3e50') {
+			this.state.curComponent.style.color = color;
+			this.commit('toolbar/setRevoke');
+		},
 	},
 	actions: {},
 	getters: {},
