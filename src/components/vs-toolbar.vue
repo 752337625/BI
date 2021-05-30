@@ -39,54 +39,54 @@
                 <i class="el-icon-plus"></i>
                 <span>添加资源框</span>
             </li>
-            <!-- <li>
-				<i class="el-icon-refresh-right"></i>
-				<span>刷新</span>
-			</li> -->
+            <li @click="$router.go(0)">
+                <i class="el-icon-refresh-right"></i>
+                <span>刷新</span>
+            </li>
             <li @click="popRevoke">
-                <i class="el-icon-plus"></i>
+                <i class="iconfont icon-chexiao"></i>
                 <span>撤销</span>
             </li>
             <li @click="popRedo">
-                <i class="el-icon-plus"></i>
+                <i class="iconfont icon-chexiaoyou"></i>
                 <span>重做</span>
             </li>
-            <!-- <li>
-				<i class="el-icon-video-play"></i>
-				<span>预览</span>
-			</li>
-			<li>
-				<i class="el-icon-plus"></i>
-				<span>保存</span>
-			</li>
-			<li>
-				<i class="el-icon-plus"></i>
-				<span>分享</span>
-			</li>
-			<li>
-				<i class="el-icon-plus"></i>
-				<span>导出</span>
-			</li>
-			<li>
-				<i class="el-icon-plus"></i>
-				<span>数据</span>
-			</li>
-			<li>
-				<i class="el-icon-folder"></i>
-				<span>媒体库</span>
-			</li>
-			<li>
-				<i class="el-icon-plus"></i>
-				<span>联动设置</span>
-			</li>
-			<li>
-				<i class="el-icon-back"></i>
-				<span>返回</span>
-			</li>
-			<li>
-				<i :class="[unfold ? 'el-icon-s-unfold' : 'el-icon-monitor']"></i>
-				<span>显示右侧面板</span>
-			</li> -->
+            <li>
+                <i class="el-icon-video-play"></i>
+                <span>预览</span>
+            </li>
+            <li>
+                <i class="iconfont icon-keep"></i>
+                <span>保存</span>
+            </li>
+            <li>
+                <i class="iconfont icon-fenxiang"></i>
+                <span>分享</span>
+            </li>
+            <li>
+                <i class="iconfont icon-download"></i>
+                <span>导出</span>
+            </li>
+            <li>
+                <i class="iconfont icon-icon_huabanfuben"></i>
+                <span>数据</span>
+            </li>
+            <li>
+                <i class="el-icon-folder"></i>
+                <span>媒体库</span>
+            </li>
+            <li>
+                <i class="iconfont icon-liandong"></i>
+                <span>联动设置</span>
+            </li>
+            <li>
+                <i class="el-icon-back"></i>
+                <span>返回</span>
+            </li>
+            <li>
+                <i :class="[unfold ? 'el-icon-s-unfold' : 'el-icon-monitor']"></i>
+                <span>显示右侧面板</span>
+            </li>
         </ul>
     </div>
 </template>

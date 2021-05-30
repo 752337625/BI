@@ -37,7 +37,10 @@ export default {
 			};
 		},
 		/**
-		 * 监听dom属性更改来修改
+		 * MutationObserver监听dom属性更改来修改
+		 *但是，它与事件有一个本质不同：事件是同步触发，也就是说，
+		 *DOM 的变动立刻会触发相应的事件；Mutation Observer 则是异步触发，
+		 *DOM 的变动并不会马上触发，而是要等到当前所有 DOM 操作都结束才触发。
 		 */
 		observe() {
 			let observer = new MutationObserver((mutations, observer) => {
@@ -45,6 +48,9 @@ export default {
 			});
 			let baseFun = document.getElementById('vs-shape-1');
 			observer.observe(baseFun, { attributeFilter: ['style'] });
+			this.$once('hook:beforeDestroy', function () {
+				observer.disconnect();
+			});
 		},
 	},
 };
